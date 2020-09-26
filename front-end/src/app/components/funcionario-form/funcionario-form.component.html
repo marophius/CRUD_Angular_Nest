@@ -1,0 +1,159 @@
+<div class="container">
+  <mdb-card>
+
+    <mdb-card-header class="elegant-color-dark white-text text-center py-4">
+      <h5>
+        <strong>Funcionario</strong>
+      </h5>
+    </mdb-card-header>
+  
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+  
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" #f="ngForm" (ngSubmit)="onSubmit()">
+  
+        <div class="form-row">
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.nome" name="nome" type="text" id="nome" placeholder="ex.: Paulo" class="form-control" mdbInput
+              [ngClass]="{
+                'is-invalid': nome.invalid && (nome.dirty || nome.touched),
+                 'is-valid': nome.valid && (nome.dirty || nome.touched)
+               }" #nome="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="nome">Nome</label>
+              <div class="invalid-feedback">
+                Por favor insira um nome válido.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.sobrenome" name="sobrenome" type="text" id="sobrenome" placeholder="ex.: Almeida" class="form-control" mdbInput
+              [ngClass]="{
+                'is-invalid': sobrenome.invalid && (sobrenome.dirty || sobrenome.touched),
+                 'is-valid': sobrenome.valid && (sobrenome.dirty || sobrenome.touched)
+               }" #sobrenome="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="sobrenome">Sobrenome</label>
+              <div class="invalid-feedback">
+                Por favor insira um sobrenome válido.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.cpf" name="cpf" type="text" id="cpf" placeholder="ex.: 452.912.643-18" class="form-control" mdbInput
+              [ngClass]="{
+                'is-invalid': cpf.invalid && (cpf.dirty || cpf.touched),
+                 'is-valid': cpf.valid && (cpf.dirty || cpf.touched)
+               }" #cpf="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="cpf">CPF</label>
+              <div class="invalid-feedback">
+                Por favor insira um cpf válido.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.rg" name="rg" type="text" id="rg" placeholder="ex.: 11.342.671-99" class="form-control" mdbInput
+              [ngClass]="{
+                'is-invalid': rg.invalid && (rg.dirty || rg.touched),
+                 'is-valid': rg.valid && (rg.dirty || rg.touched)
+               }" #rg="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="rg">Registro Geral</label>
+              <div class="invalid-feedback">
+                Por favor insira um rg válido.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.dataNascimento" name="dataNascimento" type="date" id="dataNascimento" class="form-control" mdbInput
+              [ngClass]="{
+                'is-invalid': dataNascimento.invalid && (dataNascimento.dirty || dataNascimento.touched),
+                 'is-valid': dataNascimento.valid && (dataNascimento.dirty || dataNascimento.touched)
+               }" #dataNascimento="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="dataNascimento">Data de Nascimento</label>
+              <div class="invalid-feedback">
+                Por favor insira uma data válida.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.telefone" name="telefone" type="text" id="telefone" class="form-control" placeholder="ex.: (xx)xxxxx-xxxx" mdbInput
+              [ngClass]="{
+                'is-invalid': telefone.invalid && (telefone.dirty || telefone.touched),
+                 'is-valid': telefone.valid && (telefone.dirty || telefone.touched)
+               }" #telefone="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="telefone">Telefone</label>
+              <div class="invalid-feedback">
+                Por favor insira um telefone válido.
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.cargo" name="cargo" type="text" id="cargo" placeholder="ex.: Administrador" class="form-control" mdbInput
+              [ngClass]="{
+                'is-invalid': cargo.invalid && (cargo.dirty || cargo.touched),
+                 'is-valid': cargo.valid && (cargo.dirty || cargo.touched)
+               }" #cargo="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="cargo">Cargo</label>
+              <div class="invalid-feedback">
+                Por favor insira um cargo válido.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+
+            <div class="md-form">
+              <input [(ngModel)]="funcionario.email" name="email" type="email" id="email" class="form-control" placeholder="ex.: doidao@oquequiser.com.br" mdbInput
+              [ngClass]="{
+                'is-invalid': email.invalid && (email.dirty || email.touched),
+                 'is-valid': email.valid && (email.dirty || email.touched)
+               }" #email="ngModel" [ngModelOptions]="{standalone: true}"
+              >
+              <label for="email">Email</label>
+              <div class="invalid-feedback">
+                Por favor insira um email válido.
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <button mdbBtn color="dark" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+          type="submit">Salvar</button>
+  
+      </form>
+      <!-- Form -->
+  
+    </mdb-card-body>
+  
+  </mdb-card>
+</div>
