@@ -13,6 +13,8 @@ import { FooterComponent } from './templates/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { FuncionarioListComponent } from './components/funcionario-list/funcionario-list.component';
 import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
+import {ClienteFormComponent} from './components/cliente-form/cliente-form.component';
+import {ClienteListComponent} from './components/cliente-list/cliente-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FuncionarioFormComponent } from './components/funcionario-form/funciona
     FooterComponent,
     HomeComponent,
     FuncionarioListComponent,
-    FuncionarioFormComponent
+    FuncionarioFormComponent,
+    ClienteFormComponent,
+    ClienteListComponent,
   ],
   imports: [
     BrowserModule,

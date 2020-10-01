@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Cleinte</h2>
+  <a mdbBtn color="primary" [routerLink]="['/cadastrarClientes']">
+    Cadastrar
+  </a>
+<table mdbTable>
+  <thead class="black white-text">
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let func of cliente">
+      <th scope="row">{{cliente.nome}}</th>
+      <td>{{cliente.sobrenome}}</td>
+      <td>{{cliente.telefone}}</td>
+      <td>
+        <a mdbBtn type="button" title="Editar" color="primary" size="sm" rounded="true" mdbWavesEffect [routerLink]="['/editarFuncionarios', func._id]">
+          <mdb-icon far icon="edit"></mdb-icon>
+        </a>
+        <a mdbBtn type="button" title="Deletar" color="danger" size="sm" rounded="true" mdbWavesEffect (click)="remove(func)">
+          <mdb-icon far icon="trash-alt"></mdb-icon>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
