@@ -21,14 +21,14 @@ export class ClienteFormComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.clienteService.getById(id).subscribe(cliente => {
-        this.clienteService= cliente;
+        this.cliente = cliente;
        });
      }
    }
   onSubmit() {
     this.clienteService.save(this.cliente).subscribe(cliente => {
       console.log(cliente);
-      this.router.navigate(['clientes']);
+      this.router.navigate(['cliente']);
     });
   }
 

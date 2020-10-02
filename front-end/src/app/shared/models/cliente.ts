@@ -1,4 +1,4 @@
-export class Funcionario {
+export class Cliente {
     _id?: string;
     nome?: string;
     sobrenome?: string;

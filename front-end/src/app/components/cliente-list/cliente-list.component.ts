@@ -3,7 +3,7 @@ import { Cliente } from 'src/app/shared/models/cliente';
 import { ClienteService } from 'src/app/shared/services/cliente.service';
 
 @Component({
-  selector: 'app-funcionario-list',
+  selector: 'app-cliente-list',
   templateUrl: './cliente-list.component.html',
   styleUrls: ['./cliente-list.component.scss']
 })
