@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgBrazil, TextMask } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
 
 // styles
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -34,6 +36,8 @@ import {ClienteListComponent} from './components/cliente-list/cliente-list.compo
     FormsModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
+    TextMaskModule,
+    NgBrazil,
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],

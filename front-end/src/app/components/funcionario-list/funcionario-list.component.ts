@@ -9,7 +9,7 @@ import { FuncionarioService } from 'src/app/shared/services/funcionario.service'
 })
 export class FuncionarioListComponent implements OnInit {
 
-  headElements = ['Nome', 'Sobrenome', 'Telefone', 'Ações'];
+  headElements = ['Nome', 'Sobrenome', 'Telefone', 'Cargo', 'Ações'];
 
   public funcionarios: Funcionario[] = [];
   public windowReload;

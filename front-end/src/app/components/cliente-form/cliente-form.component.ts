@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/shared/models/cliente';
 import { ClienteService } from 'src/app/shared/services/cliente.service';
+import { MASKS } from 'ng-brazil';
 
 @Component({
   selector: 'app-cliete-form',
@@ -10,6 +11,7 @@ import { ClienteService } from 'src/app/shared/services/cliente.service';
 })
 export class ClienteFormComponent implements OnInit {
 
+  public MASKS = MASKS;
   public cliente: Cliente = {};
 
   constructor(

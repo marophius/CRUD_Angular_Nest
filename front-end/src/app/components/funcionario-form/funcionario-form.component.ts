@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Funcionario } from 'src/app/shared/models/funcionario';
 import { FuncionarioService } from 'src/app/shared/services/funcionario.service';
+import { MASKS } from 'ng-brazil';
+// import { utilsBr } from 'js-brasil';
 
 @Component({
   selector: 'app-funcionario-form',
@@ -10,7 +12,10 @@ import { FuncionarioService } from 'src/app/shared/services/funcionario.service'
 })
 export class FuncionarioFormComponent implements OnInit {
 
+  public MASKS = MASKS;
+
   public funcionario: Funcionario = {};
+  public cargos = ['Desenvolvedor FullStack', 'Desenvolvedor Backend', 'Desenvolvedor Front-end', 'DBA']
 
   constructor(
     private funcService: FuncionarioService,
