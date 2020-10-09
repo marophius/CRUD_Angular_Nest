@@ -21,10 +21,13 @@
                 class="form-control" mdbInput [ngClass]="{
                 'is-invalid': nome.invalid && (nome.dirty || nome.touched),
                  'is-valid': nome.valid && (nome.dirty || nome.touched)
-               }" #nome="ngModel" [ngModelOptions]="{standalone: true}">
-              <label for="nome">Nome</label>
-              <div class="invalid-feedback">
+               }" #nome="ngModel" [ngModelOptions]="{standalone: true}"
+             required >
+               <label for="nome">Nome</label>
+               <div class="invalid-feedback" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+                <p *ngIf="nome.errors.required">
                 Por favor insira um nome válido.
+                </p>
               </div>
             </div>
           </div>
@@ -35,10 +38,14 @@
                 placeholder="ex.: Almeida" class="form-control" mdbInput [ngClass]="{
                 'is-invalid': sobrenome.invalid && (sobrenome.dirty || sobrenome.touched),
                  'is-valid': sobrenome.valid && (sobrenome.dirty || sobrenome.touched)
-               }" #sobrenome="ngModel" [ngModelOptions]="{standalone: true}">
+               }" #sobrenome="ngModel" [ngModelOptions]="{standalone: true}"
+               required>
               <label for="sobrenome">Sobrenome</label>
-              <div class="invalid-feedback">
-                Por favor insira um sobrenome válido.
+
+              <div class="invalid-feedback" *ngIf="sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)">
+                <p *ngIf="sobrenome.errors.required">
+                  Por favor insira um sobrenome válido.
+                </p>
               </div>
             </div>
           </div>
@@ -49,32 +56,40 @@
           <div class="col">
 
             <div class="md-form">
-              <input [(ngModel)]="cliente.cpf" name="cpf" type="text" id="cpf" placeholder="ex.: 452.912.643-18"
+              <input [(ngModel)]="cliente.cpf" cpf [textMask]="{mask: MASKS.cpf.textMask}" name="cpf" type="text" id="cpf" placeholder="ex.: 452.912.643-18" class="form-control" mdbInput
                 class="form-control" mdbInput [ngClass]="{
                 'is-invalid': cpf.invalid && (cpf.dirty || cpf.touched),
                  'is-valid': cpf.valid && (cpf.dirty || cpf.touched)
-               }" #cpf="ngModel" [ngModelOptions]="{standalone: true}">
-              <label for="cpf">CPF</label>
-              <div class="invalid-feedback">
-                Por favor insira um cpf válido.
-              </div>
+               }" #cpf="ngModel" [ngModelOptions]="{standalone: true}"
+               required minlength="11">
+
+               <label for="cpf">CPF</label>
+               <div class="invalid-feedback" *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)">
+                <p *ngIf="cpf.errors">
+                  Por favor insira um cpf válido.
+                </p>
             </div>
           </div>
+          </div>
+          
           <div class="col">
 
             <div class="md-form">
-              <input [(ngModel)]="cliente.rg" name="rg" type="text" id="rg" placeholder="ex.: 11.342.671-99"
+              <input [(ngModel)]="cliente.rg" rg [textMask]="{mask: MASKS.rg.textMask }" name="rg" type="text" id="rg" placeholder="ex.: 11.342.671-99" class="form-control" mdbInput
                 class="form-control" mdbInput [ngClass]="{
                 'is-invalid': rg.invalid && (rg.dirty || rg.touched),
                  'is-valid': rg.valid && (rg.dirty || rg.touched)
-               }" #rg="ngModel" [ngModelOptions]="{standalone: true}">
-              <label for="rg">Registro Geral</label>
-              <div class="invalid-feedback">
-                Por favor insira um rg válido.
-              </div>
+               }" #rg="ngModel" [ngModelOptions]="{standalone: true}"
+               required minlength="11">
+               <label for="rg">Registro Geral</label>
+              <div class="invalid-feedback" *ngIf="rg.invalid && (rg.dirty || rg.touched)">
+                <p *ngIf="rg.errors">
+                  Por favor insira um rg válido.
+                </p>
             </div>
           </div>
         </div>
+      </div>
 
         <div class="form-row">
           <div class="col">
@@ -84,28 +99,35 @@
                 class="form-control" mdbInput [ngClass]="{
                 'is-invalid': dataNascimento.invalid && (dataNascimento.dirty || dataNascimento.touched),
                  'is-valid': dataNascimento.valid && (dataNascimento.dirty || dataNascimento.touched)
-               }" #dataNascimento="ngModel" [ngModelOptions]="{standalone: true}">
+               }" #dataNascimento="ngModel" [ngModelOptions]="{standalone: true}"
+              required >
               <label for="dataNascimento">Data de Nascimento</label>
-              <div class="invalid-feedback">
-                Por favor insira uma data válida.
-              </div>
+              <div class="invalid-feedback" *ngIf="dataNascimento.invalid && (dataNascimento.dirty || dataNascimento.touched)">
+                <p *ngIf="dataNascimento.errors">
+                  Por favor insira uma data válida.
+                </p>
             </div>
           </div>
+          </div>
+
           <div class="col">
 
             <div class="md-form">
-              <input [(ngModel)]="cliente.telefone" name="telefone" type="text" id="telefone" class="form-control"
+              <input [(ngModel)]="cliente.telefone" telefone [textMask]="{mask: MASKS.telefone.textMask}" name="telefone" type="text" id="telefone" class="form-control" placeholder="ex.: (xx)xxxxx-xxxx" mdbInput
                 placeholder="ex.: (xx)xxxxx-xxxx" mdbInput [ngClass]="{
                 'is-invalid': telefone.invalid && (telefone.dirty || telefone.touched),
                  'is-valid': telefone.valid && (telefone.dirty || telefone.touched)
-               }" #telefone="ngModel" [ngModelOptions]="{standalone: true}">
+               }" #telefone="ngModel" [ngModelOptions]="{standalone: true}"
+              required minlength="10">
               <label for="telefone">Telefone</label>
-              <div class="invalid-feedback">
-                Por favor insira um telefone válido.
-              </div>
+              <div class="invalid-feedback" *ngIf="telefone.invalid && (telefone.dirty || telefone.touched)">
+                <p *ngIf="telefone.errors">
+                  Por favor insira um telefone válido.
+                </p>
             </div>
           </div>
         </div>
+      </div>
 
 
         <!--   <div class="form-row">
@@ -132,13 +154,17 @@
               placeholder="ex.: doidao@oquequiser.com.br" mdbInput [ngClass]="{
                 'is-invalid': email.invalid && (email.dirty || email.touched),
                  'is-valid': email.valid && (email.dirty || email.touched)
-               }" #email="ngModel" [ngModelOptions]="{standalone: true}">
-            <label for="email">Email</label>
-            <div class="invalid-feedback">
-              Por favor insira um email válido.
-            </div>
+               }" #email="ngModel" [ngModelOptions]="{standalone: true}"
+               required email minlength="8">
+              <label for="email">Email</label>
+              <div class="invalid-feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <p *ngIf="email.errors">
+                  Por favor insira um email válido.
+                </p>
           </div>
         </div>
+      </div>
+          
 
 
 <button mdbBtn color="dark" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"

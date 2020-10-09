@@ -9,7 +9,7 @@ import { ClienteService } from 'src/app/shared/services/cliente.service';
 })
 export class ClienteListComponent implements OnInit {
 
-  headElements = ['Nome', 'Sobrenome', 'Telefone', 'Ações'];
+  headElements = ['Nome', 'Sobrenome', 'Telefone','RG', 'Ações'];
 
   public clientes: Cliente[] = [];
   public windowReload;

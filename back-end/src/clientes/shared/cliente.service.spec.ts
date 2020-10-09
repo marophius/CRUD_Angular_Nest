@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ClienteService } from './cliente.service';
 
 describe('ClienteService', () => {
-  let provider: CleinteService;
+  let provider: ClienteService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
