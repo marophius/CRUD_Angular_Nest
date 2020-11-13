@@ -8,5 +8,6 @@ export class Cliente extends Document {
     cpf: string;
     rg: string;
     telefone: string;
+    image: string;
     
 }

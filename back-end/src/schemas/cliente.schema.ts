@@ -30,5 +30,9 @@ export  const ClienteSchema = new mongoose.Schema({
     telefone: {
         type: String,
         required: true
+    },
+    image: {
+        type: String,
+        required: true
     }
 })

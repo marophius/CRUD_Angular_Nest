@@ -9,4 +9,5 @@ export class Funcionario extends Document {
     rg: string;
     cargo: string;
     dataNascimento: Date;
+    image: string;
 }
